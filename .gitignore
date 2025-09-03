@@ -1,3 +1,5 @@
+venv/
+
 # Python
 *.pyc
 __pycache__/
@@ -5,9 +7,7 @@ __pycache__/
 # Django Migrations - Keep migrations, ignore __pycache__ inside it
 **/migrations/__pycache__/
 
-# Environment
-.env
-.env.*
+
 
 # Virtual Environment
 venv/
