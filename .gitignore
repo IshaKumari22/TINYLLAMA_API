@@ -1,1 +1,4 @@
 venv/
+
+# SQLite Database (optional)
+db.sqlite3
