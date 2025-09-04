@@ -51,6 +51,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
+from rest_framework.permissions import AllowAny
 
 # Local path where model is stored
 LOCAL_MODEL_PATH = "./models/TinyLlama"
@@ -63,6 +64,8 @@ model = AutoModelForCausalLM.from_pretrained(
 ).to("cpu")
 
 class TinyLlamaView(APIView):
+    authentication_classes = []   # removes SessionAuthentication / TokenAuthentication
+    permission_classes = [AllowAny]  
     def post(self, request):
         user_input = request.data.get("prompt", "")
         
