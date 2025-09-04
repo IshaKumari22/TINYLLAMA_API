@@ -85,3 +85,8 @@ class TinyLlamaView(APIView):
         response_text = full_output.split("<|assistant|>")[-1].strip()
         
         return Response({"response": response_text})
+    
+
+
+
+    
