@@ -121,6 +121,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
                 'type': 'chat_message',
                 'message': message,
                 'sender': sender.username,
+                'sender_id': sender.id,
                 'timestamp': str(msg_obj.timestamp),
             }
         )
@@ -129,5 +130,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
         await self.send(text_data=json.dumps({
             'message': event['message'],
             'sender': event['sender'],
+            'sender_id': event['sender_id'], 
             'timestamp': event['timestamp']
         }))
